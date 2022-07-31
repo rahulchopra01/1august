@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class ques1 {
+
+
+    void c1(){
+        float x; float y;
+        System.out.println("enter the real part of complex number  : ");
+        Scanner sc =new Scanner(System.in);
+        x=sc.nextFloat();
+        System.out.println("enter the imaginary part of the complex number : ");
+        y=sc.nextFloat();
+        //this will display the sum of the two complex numbers
+        System.out.println("enter the real part of another complex number  : ");
+        float xx, yy;
+        xx=sc.nextFloat();
+        System.out.println("enter the imaginary part of the another complex number : ");
+        yy=sc.nextFloat();
+        float s1 = x+xx;
+        float s2=y+yy;
+        System.out.println("sum of the complex numbers are "+" "+s1+" "+"+"+ " " +s2+"i");
+
+    }
+    void c2(){
+        float x; float y;
+        System.out.println("enter the real part of complex number  : ");
+        Scanner sc =new Scanner(System.in);
+        x=sc.nextFloat();
+        System.out.println("enter the imaginary part of the complex number : ");
+        y=sc.nextFloat();
+        //this will display the sum of the two complex numbers
+        System.out.println("enter the real part of another complex number  : ");
+        float xx, yy;
+        xx=sc.nextFloat();
+        System.out.println("enter the imaginary part of the another complex number : ");
+        yy=sc.nextFloat();
+        float s1 = x*xx;
+        float s2=y*yy;
+        System.out.println("sum of the complex numbers are "+" "+s1+" "+"+"+ " " +s2+"i");
+
+    }
+
+    public static void main(String[] args) {
+        ques1 o =new ques1();
+        o.c1();
+        o.c2();
+    }
+}
