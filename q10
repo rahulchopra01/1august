@@ -1,0 +1,32 @@
+import java.awt.*;
+import java.awt.event.*;
+public class ColoredButton extends Frame implements ActionListener
+{
+    Button cmd1, cmd2;
+    public ColoredButton()
+    {
+        cmd1 = new Button("Red");
+        cmd2 = new Button("Blue");
+        //registring the events
+        cmd1.addActionListener(this);
+        cmd2.addActionListener(this);
+
+        setLayout(new FlowLayout());
+        setSize(300,300);
+        add(cmd1); add(cmd2);
+        this.setResizable(false);
+        setVisible(true);
+
+    }
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getSource() == cmd1)
+            this.setBackground(Color.red);
+        else if(e.getSource() == cmd2)
+            this.setBackground(Color.blue);;
+    }
+    public static void main(String args[])
+    {
+        new ColoredButton();
+    }
+}
