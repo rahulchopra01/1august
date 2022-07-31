@@ -1,0 +1,110 @@
+// ques 3
+package P1;
+
+public abstract class Shape
+{
+    protected abstract void getData()throws java.io.IOException;
+    public abstract double area()throws java.io.IOException;
+}
+//second
+
+package P2;
+
+        import java.io.*;
+
+        import P1.*;
+
+public class Rectangle extends Shape
+{
+    private double length;
+    private double breadth;
+
+    protected void getData()throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Enter the length: ");
+        length=Double.parseDouble(br.readLine());
+
+        System.out.println("Enter the breadth: ");
+        breadth=Double.parseDouble(br.readLine());
+    }
+
+    public double area()throws IOException
+    {
+        getData();
+        return length*breadth;
+    }
+
+
+
+    //third
+package P3;
+
+import java.io.*;
+
+import P1.*;
+
+    public class Circle extends Shape
+    {
+        private double radius;
+
+        protected void getData()throws IOException
+        {
+            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+            System.out.println("Enter the radius: ");
+            radius=Double.parseDouble(br.readLine());
+        }
+
+        public double area()throws IOException
+        {
+            getData();
+            return 3.14*radius*radius;
+        }
+    }
+    
+    //main
+import java.io.*;
+
+import P1.*;
+import P2.*;
+import P3.*;
+
+    class Main
+    {
+        public static void main(String args[])throws IOException
+        {
+            BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
+            int ch;
+            while(true)
+            {
+                System.out.println("Enter shape type- 1 for Rectangle and 2 for Circle and 3 for exit: ");
+                ch=Integer.parseInt(br.readLine());
+
+                Shape sh;
+
+
+                if (ch==1)
+                {
+                    sh=new Rectangle();
+                    System.out.println("Area of Rectangle is: " + sh.area() + " sq. units");
+
+                }
+
+                else if(ch==2)
+                {
+                    sh=new Circle();
+                    System.out.println("Area Circle is: " + sh.area() + " sq. units");
+
+                }
+
+                else
+                {
+                    System.out.println("EXITING...");
+                    System.exit(0);
+                }
+            }
+        }
+    }
